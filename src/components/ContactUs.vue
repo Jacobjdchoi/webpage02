@@ -84,7 +84,9 @@
             </md-card-actions>
           </md-card>
 
-          <md-snackbar :md-active.sync="emailSent">{{ $t('contactUs.noti.success') }}</md-snackbar>
+          <md-snackbar md-position="left" md-duration="3000" md-persistent :md-active.sync="emailSent" >
+            <span>{{ $t('contactUs.noti.success') }}</span>
+          </md-snackbar>
         </form>
 
         <md-card class="md-layout-item md-size-50 md-small-size-100">
@@ -93,13 +95,12 @@
           </md-card-header>
           <md-card-content>
             <gmap-map
-              :center="{lat:37.47219, lng:126.8850023}"
-              :zoom="18"
-              map-type-id="terrain"
+              :center="{lat:37.4722813, lng:126.885846}"
+              :zoom="17"
               style="width: 100%; height: 300px"
             >
               <gmap-marker
-                :position="{lat:37.47219, lng:126.8850023}"
+                :position="{lat:37.4722813, lng:126.885846}"
                 :clickable="true"
                 :draggable="false"
               ></gmap-marker>
@@ -180,42 +181,73 @@ export default {
       }
     },
     sendEmail () {
-      this.$v.$touch()
+      const vm = this;
+      vm.$v.$touch()
       let info = this.$data.form
       let emailHTMLbody = `
         <h3>[성명]: ${info.personName} [회사명]: ${info.companyName}</h3>
         <h3>[이메일]: ${info.email} [전화번호]: ${info.contactNumber}</h3>
         <h3>[문의주제]: ${JSON.stringify(info.areasOfSupport)} </h3>
-        <h5><<문의내용>></h5>
+        <h5>[문의내용]</h5>
         <p>${info.message}</p>
       `
       console.log(emailHTMLbody);
-      if (!this.$v.$invalid) {
-        // let emailHTMLBody = '';
-        //  // setup email data with unicode symbols
-        // let mailOptions = {
-        //     from: '"웹페이지" <sales@choistechnics.com>', // sender address
-        //     to: 'sales@choistechnics.com',
-        //     subject: '웹사이트 Contact', // Subject line
-        //     text: '', // plain text body
-        //     html: emailHTMLBody // html body
-        // };
-
-        // // send mail with defined transport object
-        // transporter.sendMail(mailOptions, (error, info) => {
-        //     if (error) {
-        //         return console.log(error);
-        //     }
-        //     console.log('Message sent: %s', info.messageId);
-        //     // Preview only available when sending through an Ethereal account
-        //     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-        //     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-        //     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-        // });
-        this.$router.push('/');
-      }
       
+      if (!vm.$v.$invalid) {
+
+
+        // var baseUrl = axios.create({
+        //     baseURL: `https://ixmv43opo1.execute-api.ap-northeast-2.amazonaws.com/`,
+        // })
+        // baseUrl.post('prod/', {
+        //   "message": JSON.stringify(emailHTMLbody)
+        // },{
+        //   headers: {
+        //     "Accept": "application/json",
+        //     "Content-Type": "application/json",
+        //   }
+        // })
+        // .then(response => {
+        //   //send notification
+        //   console.log(response);
+        //   vm.$data.emailSent = true;
+        //   //redirect to home
+        //   // vm.$router.push('/');
+        // })
+        // .catch( e => {
+        //   //send notification
+        //   vm.$data.emailSent = false;
+        //   this.errors.push(e);
+        //   vm.$router.push('/contact-us');
+        // });
+        var myHeaders = new Headers();
+
+        myHeaders.append('Content-Type', 'application/json');
+        myHeaders.append('Accept', 'application/json');
+
+        fetch('https://ixmv43opo1.execute-api.ap-northeast-2.amazonaws.com/prod/', {
+          method: "POST",
+          mode: 'cors',
+          headers: myHeaders,
+          body: JSON.stringify({
+            "message": emailHTMLbody
+          }),
+          
+        })
+        .then(response => {
+          //send notification
+          console.log(response);
+          vm.$data.emailSent = true;
+          //redirect to home
+          // vm.$router.push('/');
+        })
+        .catch( e => {
+          //send notification
+          vm.$data.emailSent = false;
+          this.errors.push(e);
+          vm.$router.push('/contact-us');
+        });
+      }
     }
   },
   watch: {

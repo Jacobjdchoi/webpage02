@@ -25,6 +25,18 @@ npm run e2e
 
 # run all tests
 npm test
+
+
+# Enable pre-installed Amazon linux 2 Nginx1.12
+
+1. Install deltarpm first
+sudo yum install deltarpm
+
+2. Enable nginx1.12
+sudo amazon-linux-extras install nginx1.12
+
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+

@@ -1,7 +1,7 @@
 <template>
     <div id="navigation" class="navigation">
         <!-- Mobile Start -->
-        <show-at breakpoint="mediumAndBelow">
+        <show-at breakpoint="smallAndBelow">
             <div class="mobile" id="mobile">
                 <Slideout menu="#menu" 
                         panel="#panel" 
@@ -80,7 +80,7 @@
 
 
         <!-- Browser Start -->
-        <hide-at breakpoint="mediumAndBelow">
+        <hide-at breakpoint="smallAndBelow">
             <div class="browser-header" id="browser-header">
                 <div class="center-contents header-flex-area">
                     <div class="logo-area header-flex-item">
@@ -209,7 +209,7 @@
 <style lang="scss">
 $mobile-header-height: 8vh;
 $mobile-header-shadow: 0 -3px 5px 5px #575757;
-$browser-header-height: 8vw;
+$browser-header-height: 13vh;
 $browser-header-shadow: 0 6px 15px -4px rgb(0, 0, 0);
 $footer-height: 10vh;
 $footer-color: #142901;
@@ -253,7 +253,7 @@ $footer-color: #142901;
                 height: 4vw;
                 line-height: 4vw;
                 .nav-browser-link {
-                    font-size: 1.4vw;
+                    font-size: $browser-header-height*0.13 ;
                     color: #505050;
                     box-sizing: border-box;
                     -moz-box-sizing: border-box;
@@ -263,23 +263,39 @@ $footer-color: #142901;
                     }
                     &.router-link-exact-active {
                         color: #520500;
-                        font-size: 1.5vw;
+                        font-size: $browser-header-height*0.14;
                         font-weight: 500;
                         border-bottom: 3px solid #520500;
                         transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
                         &:hover {
                             color: #520500;
-                            font-size: 1.5vw;
+                            font-size: $browser-header-height*0.14;
                             font-weight: 500;
                         }
                     }
                     &:hover {
                         color: #770902;
-                        font-size: 1.4vw;
+                        font-size: $browser-header-height*0.14;
                         transition: font-size 0.2s,  color 0.2s;
                     }
                 }
             }
+        }
+    }
+}
+
+$browser-large-header-height: 2vh;
+@media only screen and (min-width: 1000px) {
+    .nav-browser-link {
+        font-size: $browser-large-header-height !important;
+        &.router-link-exact-active {
+            font-size: $browser-large-header-height*1.17 !important;
+            &:hover {
+                font-size: $browser-large-header-height*1.16 !important;
+            }
+        }
+        &:hover {
+            font-size: $browser-large-header-height*1.16 !important;
         }
     }
 }

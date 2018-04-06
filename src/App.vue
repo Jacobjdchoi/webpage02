@@ -42,7 +42,7 @@ a {
     text-decoration: none !important;
   }
 }
-@media only screen and (min-width: 1128px) {
+@media only screen and (min-width: 744px) {
   .center-contents {
       width: $browser-center-contents-width;
       margin: 0 auto;
@@ -75,7 +75,9 @@ a {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23152b00'%2F%3E%3C%2Fsvg%3E")
 }
 
-
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #820800;
+}
 .supplier-info {
   width: 100%;
   height: auto;

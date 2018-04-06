@@ -12,7 +12,7 @@
             </router-link>
           </swiper-slide>
           <!-- Optional controls -->
-          <div class="swiper-pagination home"  slot="pagination"></div>
+          <div class="swiper-pagination"  slot="pagination"></div>
           <div class="swiper-button-prev home" slot="button-prev"></div>
           <div class="swiper-button-next home" slot="button-next"></div>
         </swiper>
@@ -34,6 +34,13 @@ export default {
   data () {
     return {
       swiperOption: {
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         loop: true,
         autoplay: {
           delay: 5000,
@@ -85,7 +92,9 @@ export default {
   
 }
 .slider-item-image {
-  width: 100%;
+  height: 80vh;
+  width: auto;
+  object-fit: cover;
 }
 .slider-item-text {
   position: absolute;
