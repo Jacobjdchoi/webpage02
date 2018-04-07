@@ -184,48 +184,17 @@ export default {
       const vm = this;
       vm.$v.$touch()
       let info = this.$data.form
-      let emailHTMLbody = `
-        <h3>[성명]: ${info.personName} [회사명]: ${info.companyName}</h3>
-        <h3>[이메일]: ${info.email} [전화번호]: ${info.contactNumber}</h3>
-        <h3>[문의주제]: ${JSON.stringify(info.areasOfSupport)} </h3>
-        <h5>[문의내용]</h5>
-        <p>${info.message}</p>
-      `
+      let emailHTMLbody = `<br><h3>[성명]: ${info.personName} [회사명]: ${info.companyName}</h3><br><h3>[이메일]: ${info.email} [전화번호]: ${info.contactNumber}</h3><br><h3>[문의주제]: ${JSON.stringify(info.areasOfSupport)} </h3><br><h5>[문의내용]</h5><br><p>${info.message}</p><br>`
       console.log(emailHTMLbody);
       
       if (!vm.$v.$invalid) {
 
-
-        // var baseUrl = axios.create({
-        //     baseURL: `https://ixmv43opo1.execute-api.ap-northeast-2.amazonaws.com/`,
-        // })
-        // baseUrl.post('prod/', {
-        //   "message": JSON.stringify(emailHTMLbody)
-        // },{
-        //   headers: {
-        //     "Accept": "application/json",
-        //     "Content-Type": "application/json",
-        //   }
-        // })
-        // .then(response => {
-        //   //send notification
-        //   console.log(response);
-        //   vm.$data.emailSent = true;
-        //   //redirect to home
-        //   // vm.$router.push('/');
-        // })
-        // .catch( e => {
-        //   //send notification
-        //   vm.$data.emailSent = false;
-        //   this.errors.push(e);
-        //   vm.$router.push('/contact-us');
-        // });
         var myHeaders = new Headers();
 
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('Accept', 'application/json');
 
-        fetch('https://ixmv43opo1.execute-api.ap-northeast-2.amazonaws.com/prod/', {
+        fetch('https://ydip3e0715.execute-api.ap-northeast-2.amazonaws.com/prod/contact-us', {
           method: "POST",
           mode: 'cors',
           headers: myHeaders,
