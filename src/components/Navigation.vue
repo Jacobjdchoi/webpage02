@@ -1,7 +1,7 @@
 <template>
     <div id="navigation" class="navigation">
         <!-- Mobile Start -->
-        <show-at breakpoint="smallAndBelow">
+        <show-at :breakpoints="{small: 960, medium: 1280, large: 1920}" breakpoint="small">
             <div class="mobile" id="mobile">
                 <Slideout menu="#menu" 
                         panel="#panel" 
@@ -80,7 +80,7 @@
 
 
         <!-- Browser Start -->
-        <hide-at breakpoint="smallAndBelow">
+        <hide-at :breakpoints="{small: 960, medium: 1280, large: 1920}" breakpoint="small">
             <div class="browser-header" id="browser-header">
                 <div class="center-contents header-flex-area">
                     <div class="logo-area header-flex-item">

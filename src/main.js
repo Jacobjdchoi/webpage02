@@ -5,7 +5,7 @@ import App from './App'
 import store from './store/index'
 import router from './router'
 import VueMaterial from 'vue-material'
-// import { MdButton } from 'vue-material/dist/components'
+// import { MdCard, } from 'vue-material/dist/components'
 // https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined/33527883#33527883
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
@@ -37,6 +37,7 @@ Vue.use(VueGoodTable);
 
 /* Material Design */
 Vue.use(VueMaterial)
+// Vue.use(MdCard)
 
 /* Google Maps */
 Vue.use(VueGoogleMaps, {

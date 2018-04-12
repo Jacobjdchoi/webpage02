@@ -3,7 +3,7 @@
     <h1 class="page-title">{{ $t('diakont.title') }}</h1> 
     <div class="center-contents">
       <div :id="supplier.name" class="body">
-        <div class="supplier-info md-layout md-alignment-center">
+        <div class="supplier-info md-layout md-alignment-center md-gutter">
           <div class="md-layout-item md-large-size-25 md-medium-size-25 md-small-size-30 md-xsmall-size-100 supplier-logo-area" :id="supplier.name +'-logo-area'">
             <img src="@/assets/diakont-logo.png" :alt="supplier.name+'-logo'" :class="supplier.name+ '-logo-image'">
           </div>

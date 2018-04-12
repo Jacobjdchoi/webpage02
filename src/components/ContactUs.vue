@@ -4,7 +4,7 @@
     <div class="center-contents">
       <div id="contact-us" class="body md-layout" >
         <form class="md-layout-item md-size-50 md-small-size-100" novalidate  @submit.prevent="sendEmail">
-          <md-card >
+          <md-card>
             <md-card-header>
               <div class="md-title">{{ $t('contactUs.emailContact') }}</div>
             </md-card-header>
@@ -84,7 +84,7 @@
             </md-card-actions>
           </md-card>
 
-          <md-snackbar md-position="left" md-duration="3000" md-persistent :md-active.sync="emailSent" >
+          <md-snackbar :md-position="'left'" :md-duration="3000" md-persistent :md-active.sync="emailSent" >
             <span>{{ $t('contactUs.noti.success') }}</span>
           </md-snackbar>
         </form>
