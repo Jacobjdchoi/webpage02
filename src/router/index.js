@@ -6,6 +6,7 @@ import Harness from '@/components/Harness'
 import Diakont from '@/components/Diakont'
 import ETec from '@/components/ETec'
 import Glentek from '@/components/Glentek'
+import Vairex from '@/components/Vairex'
 import ContactUs from '@/components/ContactUs'
 import NotFoundComponent from '@/components/NotFoundComponents'
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/glentek',
       name: 'Glentek',
       component: Glentek
+    },
+    {
+      path: '/vairex',
+      name: 'Vairex',
+      component: Vairex
     },
     {
       path: '/contact-us',

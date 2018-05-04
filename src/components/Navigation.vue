@@ -29,6 +29,9 @@
                                 <router-link class="nav-mobile-link" to="/glentek"><div>{{ $t("glentek.title") }}</div></router-link>
                             </li>
                             <li class="slideout-menu-item">
+                                <router-link class="nav-mobile-link" to="/vairex"><div>{{ $t("vairex.title") }}</div></router-link>
+                            </li>
+                            <li class="slideout-menu-item">
                                 <router-link class="nav-mobile-link" to="/contact-us"><div>{{ $t("contactUs.title") }}</div></router-link>
                             </li>
                             <li class="slideout-menu-item">
@@ -74,7 +77,7 @@
                         </div>
                     </main>
                 </Slideout>
-            </div>
+            </div> <!-- .mobile#mobile --> 
         </show-at>
         <!-- Mobile End -->
 
@@ -101,52 +104,63 @@
                         </div>
                         <div class="nav-browser-link-area">
                             <ul class='nav-browser-link-list'>
-                                    <router-link class="nav-browser-link" 
-                                        to="/about-us">
-                                        <li class="nav-browser-link-item">{{ $t("aboutUs.title") }}</li>
-                                    </router-link>
-                                
-                                    <router-link class="nav-browser-link" 
-                                        to="/harness">
-                                        <li class="nav-browser-link-item">
+                                <router-link class="nav-browser-link" 
+                                    to="/about-us">
+                                    <li class="nav-browser-link-item">
+                                        {{ $t("aboutUs.title") }}
+                                    </li>
+                                </router-link>
+                            
+                                <router-link class="nav-browser-link" 
+                                    to="/harness">
+                                    <li class="nav-browser-link-item">
                                         {{ $t("hNe.title") }}
-                                </li>
-                                    </router-link>
-                                    <router-link class="nav-browser-link" 
-                                        to="/diakont">
-                                <li class="nav-browser-link-item">
-                                        {{ $t("diakont.title") }}
-                                        </li>
-                                    </router-link>
-                                
-                                
-                                    <router-link class="nav-browser-link" 
-                                        to="/e-tec">
-                                        <li class="nav-browser-link-item">
-                                        {{ $t("eTec.title") }}
-                                </li>
-                                    </router-link>
-                               
-                                    <router-link class="nav-browser-link" 
-                                        to="/glentek">
-                                         <li class="nav-browser-link-item">
-                                        {{ $t("glentek.title") }}
-                                </li>
-                                    </router-link>
-                                
-                                    <router-link class="nav-browser-link" 
-                                        to="/contact-us">
-                                        <li class="nav-browser-link-item">
+                                    </li>
+                                </router-link>
+
+                                <dropdown class="nav-browser-dropdown nav-browser-link" id="nav-browser-dropdown" :trigger="'hover'">
+                                    <template slot="btn">{{ $t("productsTitle") }}</template>
+                                    <template slot="body">
+                                        <ul class="nav-dropdown-ul">
+                                            <router-link class="nav-browser-link" to="/diakont">
+                                                <li class="nav-browser-link-item">
+                                                    {{ $t("diakont.title") }}
+                                                </li>
+                                            </router-link>
+
+                                            <router-link class="nav-browser-link" to="/e-tec">
+                                                <li class="nav-browser-link-item">
+                                                    {{ $t("eTec.title") }}
+                                                </li>
+                                            </router-link>
+
+                                            <router-link class="nav-browser-link" to="/glentek">
+                                                <li class="nav-browser-link-item">
+                                                    {{ $t("glentek.title") }}
+                                                </li>
+                                            </router-link>
+
+                                            <router-link class="nav-browser-link" to="/vairex">
+                                                <li class="nav-browser-link-item">
+                                                    {{ $t("vairex.title") }}
+                                                </li>
+                                            </router-link>
+                                        </ul>
+                                    </template>
+                                </dropdown>
+
+                                <router-link class="nav-browser-link" 
+                                    to="/contact-us">
+                                    <li class="nav-browser-link-item">
                                         {{ $t("contactUs.title") }}
-                                        </li>
-                                    </router-link>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
+                                    </li>
+                                </router-link>
+
+                            </ul> <!-- nav-browser-link-list -->
+                        </div> <!-- nav-browser-link-area -->
+                    </div> <!-- links-area header-flex-item -->
+                </div> <!-- center-contents header-flex-area -->
+            </div> <!-- browser-header -->
             <div class="browser-contents">
                 <slot class="browser-body" name="browser"></slot>
             </div>
@@ -168,10 +182,11 @@
 <script>
     import { showAt, hideAt } from 'vue-breakpoints'
     import Slideout from 'vue-slideout'
+    import Dropdown from 'bp-vuejs-dropdown'
 
     export default {
         name: 'Navigation',
-        components: { showAt, hideAt, Slideout },
+        components: { showAt, hideAt, Slideout, Dropdown },
         data(){
             return {
                 trans: false
@@ -191,7 +206,6 @@
                 } else {
                     this.$i18n.locale = "ko"
                 }
-                console.log( this.trans)
             }
         },
         mounted(){
@@ -202,6 +216,11 @@
                 bool = true;
             }
             this.translate(bool)
+            let urlPath = window.location.pathname;
+            if (urlPath.indexOf('glentek') > -1 || urlPath.indexOf('e-tec') > -1 ||
+                urlPath.indexOf('diakont') > -1 || urlPath.indexOf('vairex') > -1 ) {
+                console.log('You are on a product page')
+            }
         }
     }
 </script>
@@ -209,7 +228,7 @@
 <style lang="scss">
 $mobile-header-height: 8vh;
 $mobile-header-shadow: 0 -3px 5px 5px #575757;
-$browser-header-height: 13vh;
+$browser-header-height: 100px;
 $browser-header-shadow: 0 6px 15px -4px rgb(0, 0, 0);
 $footer-height: 10vh;
 $footer-color: #142901;
@@ -253,29 +272,33 @@ $footer-color: #142901;
                 height: 4vw;
                 line-height: 4vw;
                 .nav-browser-link {
-                    font-size: $browser-header-height*0.13 ;
-                    color: #505050;
+                    font-size: $browser-header-height*0.15 !important ;
+                    color: #333333;
+                    letter-spacing: -0.2px;
                     box-sizing: border-box;
                     -moz-box-sizing: border-box;
                     -webkit-box-sizing: border-box;
+                    min-width: 120px;
+                    text-align: center;
                     .nav-browser-link-item {
                         vertical-align: -webkit-baseline-middle;
+                        cursor: pointer;
                     }
                     &.router-link-exact-active {
                         color: #520500;
                         font-size: $browser-header-height*0.14;
                         font-weight: 500;
-                        border-bottom: 3px solid #520500;
+                        border-bottom: 6px solid #520500;
                         transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
                         &:hover {
                             color: #520500;
-                            font-size: $browser-header-height*0.14;
+                            //font-size: $browser-header-height*0.14;
                             font-weight: 500;
                         }
                     }
                     &:hover {
                         color: #770902;
-                        font-size: $browser-header-height*0.14;
+                        //font-size: $browser-header-height*0.14;
                         transition: font-size 0.2s,  color 0.2s;
                     }
                 }
@@ -283,19 +306,92 @@ $footer-color: #142901;
         }
     }
 }
+#nav-browser-dropdown {
+    &.router-link-exact-active {
+        color: #520500;
+        font-size: $browser-header-height*0.14;
+        font-weight: 500;
+        border-bottom: 3px solid #520500;
+        transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
+        &:hover {
+            color: #520500;
+            font-size: $browser-header-height*0.14;
+            font-weight: 500;
+        }
+    }
+}
+span.bp-dropdown__btn {
+    border: none;
+    vertical-align: bottom;
+    padding: 0 20px;
+    font-size: $browser-header-height*0.13 ;
+    color: #505050;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    &.router-link-exact-active {
+        color: #520500;
+        font-size: $browser-header-height*0.14;
+        font-weight: 500;
+        border-bottom: 3px solid #520500;
+        transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
+        &:hover {
+            color: #520500;
+            background: white;
+            //font-size: $browser-header-height*0.14;
+            font-weight: 500;
+        }
+    }
+    &:hover{
+        color: #770902;
+        font-size: $browser-header-height*0.14;
+        transition: font-size 0.2s,  color 0.2s;
+    }
+    &.bp-dropdown__btn--active {
+        background: transparent;
+    }
+}
+div.bp-dropdown__body {
+    padding: 0 !important;
+}
+ul.nav-dropdown-ul {
+    padding: 0;
+    list-style-type: none;
+    a.nav-browser-link{
+        li.nav-browser-link-item{
+            min-width: 100px;
+            padding: 2px 30px;
+        }
+        &.router-link-exact-active {
+            color: #520500;
+            font-size: $browser-header-height*0.14;
+            font-weight: 500;
+            transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
+            &:hover {
+                color: #520500;
+                font-size: $browser-header-height*0.14;
+                font-weight: 500;
+            }
+            li.nav-browser-link-item{
+                border-left: 3px solid #520500;
+            }
+        }
+    }
+}
+
 
 $browser-large-header-height: 2vh;
 @media only screen and (min-width: 1000px) {
     .nav-browser-link {
-        font-size: $browser-large-header-height !important;
+        // font-size: $browser-large-header-height !important;
         &.router-link-exact-active {
-            font-size: $browser-large-header-height*1.17 !important;
+            // font-size: $browser-large-header-height*1.17 !important;
             &:hover {
-                font-size: $browser-large-header-height*1.16 !important;
+                // font-size: $browser-large-header-height*1.16 !important;
             }
         }
         &:hover {
-            font-size: $browser-large-header-height*1.16 !important;
+            // font-size: $browser-large-header-height*1.16 !important;
         }
     }
 }
@@ -442,6 +538,7 @@ header{
 .mobile-contents{
     margin-top: $mobile-header-height;
 }
+
 
 
 footer {

@@ -1,4 +1,5 @@
 const ko = {
+    siteTitle: "초이스테크닉스(주)",
     mainPage: {
         title: "홈페이지",
         img1: "Harness?",
@@ -123,6 +124,12 @@ const ko = {
         productFinder: "제품 조회",
         finderLink: ""
     },
+    vairex: {
+        title: 'Vairex',
+        supplierIntro: 'VAIREX air systems는 미국 콜로라도주 볼더시에 본사를 두고 일본 도쿄에 영업 사업장을 가지고 있는 기업입니다. VAIREX air systems의 모든 고성능 공기압축기는 기업 자체적으로 디자인 제조하며 연료전지산업에서 요구하는 높은 스텐다드을 뛰어 넘습니다. 송풍기의 외형을 가진 고성능 공기압축기는 콤펙트한 디자인에 내구성이 강하고 고기압 고효율 기류를 발생시킵니다.',
+        
+    },
+    productsTitle: "제품",
     visitWebsite: "홈페이지 바로가기",
     hNe: {
         title: "하네스 & 엔지니어링",

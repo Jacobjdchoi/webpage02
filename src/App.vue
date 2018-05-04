@@ -13,6 +13,15 @@ import NavigationBar from '@/components/Navigation'
 export default {
   name: 'App',
   components: { NavigationBar },
+  metaInfo() {
+      return {
+          charset: 'utf-8',
+          title: this.$i18n.t('siteTitle'),
+          htmlAttrs: {
+              lang: this.$i18n.locale,
+          }
+      }
+  },
   mounted(){
     var vm = window.vm = this
   }
@@ -78,9 +87,14 @@ a {
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #820800;
 }
+.swiper-pagination.swiper-pagination-bullets {
+  bottom: 0px;
+}
+
 .supplier-info {
   width: 100%;
   height: auto;
+  min-height: 200px;
   margin: 2vh 0 0 0;
   .supplier-logo-area {
     text-align: center;

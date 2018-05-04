@@ -23,10 +23,12 @@ import i18n from './locale/index.js'
 import VueGoodTable from 'vue-good-table'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import VueAnalytics from 'vue-analytics'
+import Meta from 'vue-meta'
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
+Vue.use(Meta)
 
 Vue.use(ToggleButton)
 

@@ -1,4 +1,5 @@
 const en = {
+    siteTitle: "Chois Technics Inc.",
     mainPage: {
         title: "Main Page",
         img1: "Harness?",
@@ -122,6 +123,12 @@ const en = {
         productFinder: "Product finder",
         finderLink: "Click to find your product"
     },
+    vairex: {
+        title: 'Vairex',
+        supplierIntro: 'VAIREX air systems is based in Boulder, Colorado, USA, with a sales office in Tokyo, Japan. The company is a leading designer, manufacturer, and distributor of high-performance air compressors that look like a fan, but act like a compressor and are ideally suited to meet the demanding needs of the fuel cell industry for high pressure and high efficiency air flow while being compact and durable.',
+        
+    },
+    productsTitle: "Products",
     visitWebsite: "Visit Website",
     hNe: {
         title: "Harness & Engineering",
