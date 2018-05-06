@@ -189,7 +189,8 @@
         components: { showAt, hideAt, Slideout, Dropdown },
         data(){
             return {
-                trans: false
+                trans: false,
+                navDropdownHighlight: false
             }
         },
         computed: {
@@ -206,6 +207,22 @@
                 } else {
                     this.$i18n.locale = "ko"
                 }
+            },
+            productTabHighlight(){
+                let path = this.$route.path;
+                if (path.indexOf('glentek') > -1 || path.indexOf('e-tec') > -1 ||
+                    path.indexOf('diakont') > -1 || path.indexOf('vairex') > -1 ) {
+                    let navBrowserDropdown = document.getElementById('nav-browser-dropdown');
+                    if (this.navDropdownHighlight == false) {
+                        navBrowserDropdown.classList.add('router-link-exact-active');
+                    }
+
+                    this.navDropdownHighlight = true;
+                    console.log('You are on a product page', navBrowserDropdown);
+                } else {
+                    navBrowserDropdown.classList.remove('router-link-exact-active');
+                    this.navDropdownHighlight = false;
+                }
             }
         },
         mounted(){
@@ -215,12 +232,12 @@
             } else {
                 bool = true;
             }
-            this.translate(bool)
-            let urlPath = window.location.pathname;
-            if (urlPath.indexOf('glentek') > -1 || urlPath.indexOf('e-tec') > -1 ||
-                urlPath.indexOf('diakont') > -1 || urlPath.indexOf('vairex') > -1 ) {
-                console.log('You are on a product page')
-            }
+            this.translate(bool);
+
+            this.productTabHighlight();
+        },
+        beforeUpdate(){
+            this.productTabHighlight();
         }
     }
 </script>
@@ -324,27 +341,27 @@ span.bp-dropdown__btn {
     border: none;
     vertical-align: bottom;
     padding: 0 20px;
-    font-size: $browser-header-height*0.13 ;
+    font-size: $browser-header-height*0.15 ;
     color: #505050;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     &.router-link-exact-active {
         color: #520500;
-        font-size: $browser-header-height*0.14;
+        font-size: $browser-header-height*0.15;
         font-weight: 500;
         border-bottom: 3px solid #520500;
         transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
         &:hover {
             color: #520500;
             background: white;
-            //font-size: $browser-header-height*0.14;
+            font-size: $browser-header-height*0.15;
             font-weight: 500;
         }
     }
     &:hover{
         color: #770902;
-        font-size: $browser-header-height*0.14;
+        font-size: $browser-header-height*0.15;
         transition: font-size 0.2s,  color 0.2s;
     }
     &.bp-dropdown__btn--active {

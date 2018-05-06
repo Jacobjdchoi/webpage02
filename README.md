@@ -1,6 +1,6 @@
 # chois
 
-> A Vue.js project
+> A Vue.js project built with vue/webpack template.
 
 ## Build Setup
 
@@ -27,7 +27,7 @@ npm run e2e
 npm test
 
 
-# Enable pre-installed Amazon linux 2 Nginx1.12
+# Enable pre-installed Nginx1.12 on Amazon linux 2
 
 1. Install deltarpm first
 sudo yum install deltarpm
