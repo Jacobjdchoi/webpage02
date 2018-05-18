@@ -127,7 +127,59 @@ const ko = {
     vairex: {
         title: 'Vairex',
         supplierIntro: 'VAIREX air systems는 미국 콜로라도주 볼더시에 본사를 두고 일본 도쿄에 영업 사업장을 가지고 있는 기업입니다. VAIREX air systems의 모든 고성능 공기압축기는 기업 자체적으로 디자인 제조하며 연료전지산업에서 요구하는 높은 스텐다드을 뛰어 넘습니다. 송풍기의 외형을 가진 고성능 공기압축기는 콤펙트한 디자인에 내구성이 강하고 고기압 고효율 기류를 발생시킵니다.',
-        
+        compressor: {
+            title: '재생식 공기압축기',
+            desc: 'VAIREX의 재생식 공기압축기는 초당 1~75 그램 기류 와 2.0압력비 (> 2.0 bar) 이상의 압력에 효율적인 압축공기를 공급합니다. 밑 테이블에서 귀하의 제품에 맞는 압축기를 찾아보세요. 이 외 맞춤 옵션은 견적문의 바랍니다.',
+            tableDisclaimer: '*유량 및 압력 범위는 근사치이며 해수면 기준으로 측정 됬습니다. 귀하의 프로젝트에 최적인 제품을 찾으신다면 견적문의 바랍니다.',
+            produ: '생산중',
+            proto: '시제품',
+            devel: '개발중',
+            model: 'Model',
+            mxflw: '최대 유량',
+            mxprs: '최대 압력',
+            mnvlt: '최소 정격 직류 전압',
+            mxvlt: '최대 정격 직류 전압',
+            status: '생산 상태'
+        },
+        silencer: {
+            title: '소음기',
+            desc: 'VAIREX의 흡입구 소음기는 낮은 비용과 내구성이 높은 소음 제어률을 중점으로 개발된 솔루션입니다.  주파에 따라 10dB이상의 감쇠가 가능합니다. 또한, 연구실용은 필터 부착이 가능합니다.',
+            data: {
+                size: '포트 튜브 크기',
+                material: '소재',
+                temp: '온도 등급'
+            },
+            vs14: {
+                desc1: 'VAIREX VRB1과 VRB2에 사이즈가 맞게 제작됬습니다.',
+            },
+            vs25: {
+                desc1: 'VAIREX VRB4과 1인치(25mm) 포트 튜브를 쓰는 VRB8 시리즈 압축기에 사이즈가 맞게 제작됬습니다.',
+                desc2: '왼쪽에 첨부된 사진은 Solberg에서 제작된 필터/소음기를 장착한 VAIREX의 소음기입니다.',
+            },
+            vs30: {
+                desc1: '30mm 포트 튜브를 쓰는 VAIREX VRB8 시리즈에 맞게 제작됬습니다.',
+                desc2: '왼쪽에 첨부된 사진은 Solberg에서 제작된 필터/소음기를 장착한 VAIREX의 소음기입니다.',
+                material: 'ABS, 알루미늄'
+            },
+            vs33: {
+                desc1: 'VAIREX VRB32 재생식 블로어에 맞게 제작됬습니다.',
+                material: 'ABS, 알루미늄'
+            }
+        },
+        controller: {
+            title: '제어기',
+            desc1: 'VAIREX 에어 시스템은  재생식 블로어와 BLDC모터 제어기/드라이버를 같이 공급합니다. 또한, 제어기는 다양한 전압범위와 전력범위에 맞는 제어기가 있습니다.',
+            desc2: 'VAIREX는 시스템의 효율을 높일수 있도록 연료전지 출력버스에 직접 연결을 할수있으면서 직류변환기의 필요성을 없앨수 있는 컨트롤러 및 드라이버를 개발중입니다.',
+            vmc100: {
+                desc: 'VAIREX의 VMC100-1500은 연료전지 출력버스에 직접 연결될수 있게 디자인 되었습니다. 이 모델은 통합된 변환기와 온도측정 포트, CAN 통신 기능, 그리고 제어기와 재생 블로어의 수명을 늘릴수 있는 보호 기능이 탑재 되어있습니다.'
+            },
+            data: {
+                method: '제어 방법',
+                volt: '전압 범위',
+                current: '정격 전류',
+                power: '정격 출력'
+            }
+        }
     },
     productsTitle: "제품",
     visitWebsite: "홈페이지 바로가기",
@@ -211,7 +263,12 @@ const ko = {
         }
     },
     Language: "언어",
-    choistechnics: "초이스테크닉스(주)"
+    choistechnics: "초이스테크닉스(주)",
+    pageNotFound: {
+        title: "요청하신 페이지가 없습니다.",
+        message: '사이트 주소를 체크해주십시오.',
+        linkText: "홈으로 가기"
+    }
 }
 
 export default ko

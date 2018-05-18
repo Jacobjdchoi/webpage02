@@ -150,6 +150,7 @@
 
           <v-tab :title="$t('diakont.downloads.title')">
             <h3>{{$t('diakont.downloads.title')}}</h3>
+            <img class="diakont-brochure-image" src="/static/diakontDASeries.png" alt="Diakont DA Series Brochure Image" > 
             <p>
               <u>
                 <strong>

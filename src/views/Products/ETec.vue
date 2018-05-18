@@ -19,7 +19,7 @@
         </div>
 
         <div class="supplier-intro-area">
-          <swiper :options="swiperOption" ref="mySwiper">
+          <swiper :options="swiperOption" ref="mySwiper" class="e-tec-swiper">
             <swiper-slide>
               <div class="slider-item-area">
                 <img src="@/assets/etec-slider1.jpg" class="slider-item-image">
@@ -47,13 +47,13 @@
             </swiper-slide>
             
             <!-- Optional controls -->
-            <div class="swiper-pagination other" slot="pagination"></div>
-            <div class="swiper-button-prev other" slot="button-prev"></div>
-            <div class="swiper-button-next other" slot="button-next"></div>
+            <div class="swiper-pagination other e-tec" slot="pagination"></div>
+            <div class="swiper-button-prev other e-tec" slot="button-prev"></div>
+            <div class="swiper-button-next other e-tec" slot="button-next"></div>
           </swiper>
         </div>
         
-        <h3>E-TEC {{ $t('eTec.products') }}</h3>
+        <h3 class="vue-tab-title">E-TEC {{ $t('eTec.products') }}</h3>
       
         <vue-tabs>
           <v-tab :title="$t('eTec.socketsConnectors')">
@@ -283,9 +283,17 @@
     data() {
       return {
         swiperOption: {
+          pagination: {
+            el: '.swiper-pagination.e-tec'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next.e-tec',
+            prevEl: '.swiper-button-prev.e-tec'
+          },
           loop: true,
+          effect: 'fade',
           autoplay: {
-            delay: 5000,
+            delay: 4000,
           }
         },
         supplier: {
@@ -317,5 +325,33 @@
         }
       }
     }
+  }
+  .e-tec-swiper{
+    .swiper-button-prev, .swiper-button-next {
+      width: 21px;
+      background-size: 20px 44px;
+    }
+    div.swiper-pagination.other.e-tec.swiper-pagination-bullets {
+      bottom: 0px;
+      .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: #2c3e50;
+      }
+    }
+    .swiper-button-next.home, .swiper-container-rtl .swiper-button-prev {
+      background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'><path%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%232c3e50'%2F><%2Fsvg>")
+    }
+    .swiper-button-prev.home, .swiper-container-rtl .swiper-button-next {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%232c3e50'%2F%3E%3C%2Fsvg%3E")
+    }
+    .swiper-button-next.other, .swiper-container-rtl .swiper-button-prev {
+      background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'><path%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%232c3e50'%2F><%2Fsvg>")
+    }
+    .swiper-button-prev.other, .swiper-container-rtl .swiper-button-next {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%232c3e50'%2F%3E%3C%2Fsvg%3E")
+    }
+    
+  }
+  .vue-tab-title {
+    padding: 0 1em;
   }
 </style>

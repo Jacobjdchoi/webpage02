@@ -228,7 +228,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+div.body#contact-us {
+  user-select: initial;
+}
 .md-error {
   color: red;
 }
@@ -241,5 +244,10 @@ export default {
   -moz-user-select: text;
   font-size: 17px;
   line-height: 26px;
+}
+form {
+  .md-card {
+    height: 100%;
+  }
 }
 </style>

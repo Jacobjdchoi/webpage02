@@ -126,7 +126,59 @@ const en = {
     vairex: {
         title: 'Vairex',
         supplierIntro: 'VAIREX air systems is based in Boulder, Colorado, USA, with a sales office in Tokyo, Japan. The company is a leading designer, manufacturer, and distributor of high-performance air compressors that look like a fan, but act like a compressor and are ideally suited to meet the demanding needs of the fuel cell industry for high pressure and high efficiency air flow while being compact and durable.',
-        
+        compressor: {
+            title: 'Regenerative Compressors',
+            desc: 'Efficient compressed air delivery for flow rates from 1 to 75 grams per second and pressures in excess of 2.0 pressure ratio (> 2.0 bar). Find the regenerative compressor perfectly suited for your application below. Custom options are available, contact us for more information.',
+            tableDisclaimer: '*Flow and pressure ranges are approximate and rated operation at sea level. Contact us for the best solution for your requirements.',
+            produ: 'Production',
+            proto: 'Prototype',
+            devel: 'Development',
+            model: 'Model',
+            mxflw: 'Maximum Flow',
+            mxprs: 'Maximum Pressure',
+            mnvlt: 'Rated DC Voltage (Min)',
+            mxvlt: 'Rated DC Voltage (Max)',
+            status: 'Production Status'
+        },
+        silencer: {
+            title: 'Silencers',
+            desc: 'VAIREX inlet silencer developed as a low cost, durable noise control solution. Depending on frequency more than 10dB of attenuation is possible. Multiple sizes and configurations are available. For laboratory applications VAIREX offers filter attachments.',
+            data: {
+                size: 'Port Tube Size',
+                material: 'Material',
+                temp: 'Temperature Rating'
+            },
+            vs14: {
+                desc1: 'Sized to match the VAIREX VRB1 and VRB2 regenerative blowers.',
+            },
+            vs25: {
+                desc1: 'Sized to fit our VRB4 and VRB8 series of regenerative blowers with 1 inch (25mm) port tubes.',
+                desc2: 'Shown to the left is the VAIREX silencer with an integrated Solberg Manufacturing Filter/Silencer.',
+            },
+            vs30: {
+                desc1: 'Sized to fit our VRB8 series of regenerative blowers with 30mm port tubes.',
+                desc2: 'The VAIREX silencer with an integrated Solberg Manufacturing Filter/Silencer is shown to the left.',
+                material: 'ABS, Aluminium'
+            },
+            vs33: {
+                desc1: 'Sized to match the VAIREX VRB32 regenerative blowers.',
+                material: 'ABS, Aluminium'
+            }
+        },
+        controller: {
+            title: 'Controllers',
+            desc1: 'VAIREX air systems supplies BLDC motor controllers/drivers paired with regenerative blowers. The controllers are available for multiple voltage and power ranges.',
+            desc2: 'VAIREX is developing a controller/driver that can be connected directly to the fuel cell output bus to increase system efficiency and may eliminate the requirement for DC to DC converters.',
+            vmc100: {
+                desc: 'The VMC100-1500 is designed for fuel cell usage suited for direct connection to the fuel cell bus. It features integrated pressure transducer and temperature sensor ports, CAN communication capabilities, and protection functionality to extend the life of the controller and regenerative blower.'
+            },
+            data: {
+                method: 'Control Method',
+                volt: 'Voltage Range',
+                current: 'Rated Current',
+                power: 'Rated Power'
+            }
+        }
     },
     productsTitle: "Products",
     visitWebsite: "Visit Website",
@@ -210,7 +262,12 @@ const en = {
         }
     },
     language: "Language",
-    choistechnics: "Chois Technics Inc."
+    choistechnics: "Chois Technics Inc.",
+    pageNotFound: {
+        title: "Page Not Found",
+        message: 'Whoops! Something went wrong. Please check the URL.',
+        linkText: "Go to Home Page"
+    }
 }
 
 export default en

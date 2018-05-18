@@ -18,12 +18,15 @@ import 'vue-awesome/icons/bars'
 import 'vue-awesome/icons/envelope-o'
 import 'vue-awesome/icons/download'
 import 'vue-awesome/icons/window-restore'
+import 'vue-awesome/icons/chevron-up'
+import 'vue-awesome/icons/external-link'
 import Vuelidate from 'vuelidate'
 import i18n from './locale/index.js'
-import VueGoodTable from 'vue-good-table'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import VueAnalytics from 'vue-analytics'
 import Meta from 'vue-meta'
+import VueGoodTable from 'vue-good-table';
+import 'vue-good-table/dist/vue-good-table.css' // styles
 
 
 Vue.config.productionTip = true
