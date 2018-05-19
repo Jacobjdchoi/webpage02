@@ -16,5 +16,5 @@ selenium-debug.log
 *.sln
 
 /config/dev.env.js
-
-../BE/
+/config/prod.env.js
+/dist/
