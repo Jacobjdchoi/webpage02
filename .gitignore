@@ -17,4 +17,3 @@ selenium-debug.log
 
 /config/dev.env.js
 /config/prod.env.js
-/dist/
