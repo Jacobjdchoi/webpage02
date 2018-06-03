@@ -228,7 +228,7 @@ export default {
 $mobile-header-height: 8vh;
 $mobile-header-shadow: 0 -3px 5px 5px #575757;
 $browser-header-height: 100px;
-$browser-header-shadow: 0 6px 15px -4px#00000024;
+$browser-header-shadow: 0 6px 15px -4px unquote($string: "#00000024");
 
 
 #browser-header.browser-header {
