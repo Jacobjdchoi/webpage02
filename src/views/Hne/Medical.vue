@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-    name: 'Medical Application',
+    name: 'MedicalApplication',
     data(){
         return {
             title: 'Medical Application'

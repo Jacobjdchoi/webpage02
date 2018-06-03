@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    name: 'Products Main'
+    name: 'ProductsMain'
 }
 </script>
 <style lang="scss">
