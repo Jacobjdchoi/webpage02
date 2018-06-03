@@ -38,7 +38,7 @@
 <script>
 
 export default {
-  name: 'harness'
+  name: 'Engineering'
 }
 </script>
 <style lang="scss">

@@ -25,7 +25,7 @@
 <script>
 
 export default {
-  name: 'certs'
+  name: 'Certs'
 }
 </script>
 <style lang="scss">

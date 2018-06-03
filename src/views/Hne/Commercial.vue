@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-    name: 'Commercial',
+    name: 'CommercialApplication',
     data(){
         return {
             title: 'Commercial Application'
