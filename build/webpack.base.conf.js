@@ -51,6 +51,7 @@ module.exports = {
         //   /node_modules/.test(file) &&
         //   !/\.vue\.js/.test(file)
         // )
+        exclude: /node_modules(?![\\/]vue-awesome[\\/])/
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
