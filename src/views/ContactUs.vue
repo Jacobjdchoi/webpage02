@@ -185,19 +185,22 @@ export default {
       vm.$v.$touch()
       let info = this.$data.form
       let emailHTMLbody = `<br><h3>[성명]: ${info.personName} [회사명]: ${info.companyName}</h3><br><h3>[이메일]: ${info.email} [전화번호]: ${info.contactNumber}</h3><br><h3>[문의주제]: ${JSON.stringify(info.areasOfSupport)} </h3><br><h5>[문의내용]</h5><br><p>${info.message}</p><br>`
-      console.log(emailHTMLbody);
+      // console.log(emailHTMLbody);
       
       if (!vm.$v.$invalid) {
 
-        var myHeaders = new Headers();
+        // var myHeaders = new Headers();
 
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('Accept', 'application/json');
+        // myHeaders.append('Content-Type', 'application/json');
+        // myHeaders.append('Accept', 'application/json');
 
         fetch('https://ydip3e0715.execute-api.ap-northeast-2.amazonaws.com/prod/contact-us', {
           method: "POST",
           mode: 'cors',
-          headers: myHeaders,
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify({
             "message": emailHTMLbody
           }),

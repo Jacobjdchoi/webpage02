@@ -16,6 +16,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     'babel-polyfill': 'babel-polyfill',
+    'whatwg-fetch': 'whatwg-fetch',
     app: './src/main.js'
   },
   output: {
@@ -46,13 +47,48 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
-        // exclude: file => (
-        //   /node_modules/.test(file) &&
-        //   !/\.vue\.js/.test(file)
-        // )
-        exclude: /node_modules(?![\\/]vue-awesome[\\/])/
+        include: [
+          resolve('src'), 
+          resolve('test'), 
+          resolve('node_modules/webpack-dev-server/client'),
+          resolve('node_modules/vue-analytics'),
+          resolve('node_modules/vue-awesome'),
+          resolve('node_modules/vue-awesome-swiper'),
+          resolve('node_modules/vue-backtotop'),
+          resolve('node_modules/vue-breakpoints'),
+          resolve('node_modules/vue-good-table'),
+          resolve('node_modules/vue-i18n'),
+          resolve('node_modules/vue-material'),
+          resolve('node_modules/vue-meta'),
+          resolve('node_modules/vue-nav-tabs'),
+          resolve('node_modules/vue-recaptcha'),
+          resolve('node_modules/vue-video-player'),
+          resolve('node_modules/vue2-google-maps'),
+          resolve('node_modules/vuelidate'),
+        ],
+        exclude: file => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        )
       },
+      // {
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //       {
+      //           loader: 'vue-style-loader',
+      //       },
+      //       {
+      //           loader: 'css-loader',
+      //           options: {
+      //               importLoaders: 1,
+      //           }
+      //       },
+      //       {
+      //           loader: 'postcss-loader'
+      //       }
+      //   ]
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
