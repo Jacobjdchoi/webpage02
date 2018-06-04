@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: nginx:latest
+    image: 'jacobjdchoi/chois'
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,7 +10,3 @@ services:
       - '80:80'
     volumes:
       - ./dist:/usr/share/nginx/html:ro
-    networks: 
-      - webnet
-networks: 
-  webnet:
