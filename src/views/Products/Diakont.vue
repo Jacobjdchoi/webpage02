@@ -57,9 +57,14 @@
           <v-tab :title="$t('diakont.performanceVideo.title')">
             <h3>{{$t('diakont.performanceVideo.title')}}</h3>
             <div class="performance-video-area">
-              <video class="performance-video" height="405" poster="" width="720">
-                <source src="http://diakont.com/pdf/Diakont_roller_screw_actuators_2015.mp4" type="video/mp4">
-              </video>
+              
+              <video-player  class="video-player-box"
+                            ref="videoPlayer"
+                            :options="playerOptions"
+                            :playsinline="true"
+                            customEventName="customstatechangedeventname">
+              </video-player>
+
             </div>
           </v-tab>
       
@@ -167,10 +172,25 @@
 </template>
 
 <script>
+  import 'video.js/dist/video-js.css'
+  import { videoPlayer } from 'vue-video-player'
+
   export default {
     name: 'Diakont',
+    components: { videoPlayer },
     data() {
       return {
+        playerOptions: {
+          // videojs options
+          muted: true,
+          language: 'en',
+          playbackRates: [0.7, 1, 1.3, 1.5, 1.7],
+          sources: [{
+            type: "video/mp4",
+            src: "http://diakont.com/pdf/Diakont_roller_screw_actuators_2015.mp4"
+          }],
+          // poster: "",
+        },
         supplier: {
           name: 'diakont',
           url: 'http://www.diakont.com/motion_control/49/industrial-da-series-actuators.html',

@@ -4,7 +4,7 @@
         <show-at :breakpoints="{small: 960, medium: 1280, large: 1920}" breakpoint="small">
             <div class="mobile" id="mobile">
                 <md-toolbar class="mob-toolbar">
-                    <md-button class="mob-toolbar-item md-icon-button" @click="showNavigation = true">
+                    <md-button class="mob-toolbar-item md-icon-button" @click="drawerToggle()">
                         <icon name="bars" scale="1.5"></icon>
                     </md-button>
                     <div class="mob-toolbar-item" id="logo-link">
@@ -24,19 +24,19 @@
                     </md-toolbar>
                     <md-list>
                             <md-list-item>
-                                <router-link class="nav-mobile-link" to="/"><div>{{ $t("mainPage.title") }}</div></router-link>
+                                <router-link @click="drawerToggle()" class="nav-mobile-link" to="/"><div>{{ $t("mainPage.title") }}</div></router-link>
                             </md-list-item>
                             <md-list-item md-expand>
                                 <span class="md-list-item-text">{{ $t("aboutUs.title") }}</span>
                                 <md-list slot="md-expand">
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/corp/about-us"><div>{{ $t("aboutUs.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/about-us"><div>{{ $t("aboutUs.title") }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/corp/organization"><div>{{ 'Organization' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/organization"><div>{{ 'Organization' }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/corp/area-of-business"><div>{{ 'Areas of Business' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/area-of-business"><div>{{ 'Areas of Business' }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
                             </md-list-item>
@@ -44,16 +44,16 @@
                                 <span class="md-list-item-text">{{ $t("hNe.title") }}</span>
                                 <md-list slot="md-expand">
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/hne/harness"><div>{{ $t("hNe.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/harness"><div>{{ $t("hNe.title") }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/hne/engineering"><div>{{ 'Engineering' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/engineering"><div>{{ 'Engineering' }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/hne/military"><div>{{ 'Military' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/military"><div>{{ 'Military' }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/hne/medical"><div>{{ 'Medical' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/medical"><div>{{ 'Medical' }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
                             </md-list-item>
@@ -61,21 +61,21 @@
                                 <span class="md-list-item-text">Products</span>
                                 <md-list slot="md-expand">
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/products/diakont"><div>{{ $t("diakont.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/diakont"><div>{{ $t("diakont.title") }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/products/e-tec"><div>{{ $t("eTec.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/e-tec"><div>{{ $t("eTec.title") }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/products/glentek"><div>{{ $t("glentek.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/glentek"><div>{{ $t("glentek.title") }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link class="nav-mobile-link" to="/products/vairex"><div>{{ $t("vairex.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/vairex"><div>{{ $t("vairex.title") }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
                             </md-list-item>
                             <md-list-item>
-                                <router-link class="nav-mobile-link" to="/contact-us"><div>{{ $t("contactUs.title") }}</div></router-link>
+                                <router-link @click="drawerToggle()" class="nav-mobile-link" to="/contact-us"><div>{{ $t("contactUs.title") }}</div></router-link>
                             </md-list-item>
                             <md-list-item>
                                 <span class="nav-mobile-link">Language</span>
@@ -194,7 +194,9 @@ export default {
         }
     },
     methods: {
-        open(){
+        drawerToggle(){
+            this.showNavigation = !this.showNavigation;
+            console.log(this);
         },
         translate(bool){
             this.trans = bool
@@ -213,13 +215,6 @@ export default {
             bool = true;
         }
         this.translate(bool);
-    },
-    updated(){
-        // this keeps running after updated
-        // this.SubNavigationDataPass();
-    },
-    beforeUpdate(){
-        // this.SubNavigationDataPass();
     }
 }
 </script>
@@ -235,7 +230,7 @@ $browser-header-shadow: 0 6px 15px -4px unquote($string: "#00000024");
     width: 100%;
     height: $browser-header-height;
     box-shadow: $browser-header-shadow;
-    position: fixed;
+    position: relative;
     top: 0; left: 0;
     z-index: 1000;
     background: white;
@@ -312,7 +307,7 @@ $browser-header-shadow: 0 6px 15px -4px unquote($string: "#00000024");
     }
 }
 .browser-contents {
-    margin: $browser-header-height 0 0 0;
+    // margin: 10px 0 0 0;
     //min-height: 80vh;
 }
 .header-flex-area {
