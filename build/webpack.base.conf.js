@@ -14,10 +14,10 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: [
-    'babel-polyfill',
-    './src/main.js'
-  ],
+  entry: {
+    'babel-polyfill': 'babel-polyfill',
+    app: './src/main.js'
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -36,36 +36,22 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
+        use: {
+          loader: 'vue-loader',
+          options: vueLoaderConfig
+        },
       },
-      // {
-      //   test: /\.scss$/,
-      //   use: [
-      //     'vue-style-loader',
-      //     'css-loader',
-      //     'sass-loader'
-      //   ]
-      // },
-      // {
-      //   test: /\.css$/,
-      //   use: [
-      //     'vue-style-loader',
-      //     {
-      //       loader: 'css-loader',
-      //       options: { importLoaders: 1 }
-      //     },
-      //     'postcss-loader'
-      //   ]
-      // },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
-        exclude: file => (
-          /node_modules/.test(file) &&
-          !/\.vue\.js/.test(file)
-        )
+        // exclude: file => (
+        //   /node_modules/.test(file) &&
+        //   !/\.vue\.js/.test(file)
+        // )
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
