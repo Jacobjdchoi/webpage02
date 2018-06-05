@@ -60,9 +60,10 @@
                   <md-option value="견적문의">{{ $t('contactUs.areasOfService.inquiry') }}</md-option>
                   <md-option value="파트너쉽">{{ $t('contactUs.areasOfService.partnership') }}</md-option>
                   <md-option value="하네스">{{ $t('contactUs.areasOfService.harness') }}</md-option>
-                  <md-option value="diakont">{{ $t('contactUs.areasOfService.diakont') }}</md-option>
-                  <md-option value="eTec">{{ $t('contactUs.areasOfService.eTec') }}</md-option>
-                  <md-option value="glentek">{{ $t('contactUs.areasOfService.glentek') }}</md-option>
+                  <md-option value="diakont">Diakont</md-option>
+                  <md-option value="eTec">E-Tec</md-option>
+                  <md-option value="glentek">Glentek</md-option>
+                  <md-option value="vairex">Vairex</md-option>
                   <md-option value="기타">{{ $t('contactUs.areasOfService.etc') }}</md-option>
                 </md-select>
               </md-field>
