@@ -13,7 +13,6 @@
     "ajv": "^6.4.0",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
-    "fsevents": "^1.2.4",
     "nodemailer": "^4.6.3",
     "npm": "^6.1.0",
     "request": "^2.85.0",
