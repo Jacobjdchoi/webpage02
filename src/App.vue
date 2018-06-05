@@ -36,9 +36,20 @@ $slider-color-home: #3a0400;
 $slider-color-other: #152b00;
 $responsive-breakpoint: 1128px;
 
+:lang(ko){
+  font-family: 'Malgun Gothic';
+}
+:lang(en){
+  font-family: Arial, Helvetica, sans-serif;
+}
+:-ms-lang(en){
+  font-family: Arial, Helvetica, sans-serif;
+}
+:-ms-lang(ko){
+  font-family: 'Malgun Gothic';
+}
 
 #app {
-  font-family: 'NanumGothic', 'NanumGothicBold', 'NanumSquare', Verdana, Tahoma, 돋움, Dotum, 굴림, Gulim, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;

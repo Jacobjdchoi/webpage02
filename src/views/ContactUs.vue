@@ -249,6 +249,7 @@ div.body#contact-us {
   line-height: 26px;
 }
 form {
+  -ms-overflow-style: none;
   .md-card {
     height: 100%;
   }
