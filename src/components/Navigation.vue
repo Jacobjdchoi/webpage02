@@ -13,7 +13,7 @@
                         </router-link>
                     </div>
                     <md-button class="mob-toolbar-item md-icon-button" id="mail-link">
-                        <router-link to="/contact-us">
+                        <router-link class="important" to="/contact-us">
                             <icon name="envelope-o" scale="1.5"></icon>
                         </router-link>
                     </md-button>
@@ -29,13 +29,13 @@
                             <md-list-item md-expand>
                                 <span class="md-list-item-text">{{ $t("aboutUs.title") }}</span>
                                 <md-list slot="md-expand">
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/about-us"><div>{{ $t("aboutUs.title") }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/organization"><div>{{ $t('aboutUs.bDiv.title') }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/area-of-business"><div>{{ $t('aboutUs.bArea.title') }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
@@ -43,33 +43,33 @@
                             <md-list-item md-expand>
                                 <span class="md-list-item-text">{{ $t("hNe.title") }}</span>
                                 <md-list slot="md-expand">
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/medical"><div>{{ $t('hNe.harness.medical.title') }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/industrial"><div>{{ $t('hNe.harness.industrial.title') }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/engineering"><div>{{ $t('hNe.engineering.title') }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/certs"><div>{{ $t('hNe.engineering.qmsc.title') }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
                             </md-list-item>
                             <md-list-item md-expand>
-                                <span class="md-list-item-text">Products</span>
+                                <span class="md-list-item-text">{{ $t("productsTitle") }}</span>
                                 <md-list slot="md-expand">
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/diakont"><div>{{ $t("diakont.title") }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/e-tec"><div>{{ $t("eTec.title") }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/glentek"><div>{{ $t("glentek.title") }}</div></router-link>
                                     </md-list-item>
-                                    <md-list-item class="md-inset">
+                                    <md-list-item class="md-inset nav-menu-sublist-item">
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/products/vairex"><div>{{ $t("vairex.title") }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
@@ -353,7 +353,6 @@ $browser-header-shadow: 0 6px 15px -4px unquote($string: "#00000024");
 }
 
 
-
 .btn-to-top {
     width: 50px;
     height: 50px;
@@ -363,6 +362,14 @@ $browser-header-shadow: 0 6px 15px -4px unquote($string: "#00000024");
     
     .fa-icon{
         color: #1b4600;
+    }
+}
+
+.nav-menu-sublist-item {
+    .md-list-item-container {
+        .md-list-item-content {
+            padding-left: 10vw !important;
+        }
     }
 }
 

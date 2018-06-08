@@ -22,12 +22,10 @@
         <!-- Mobile Start -->
         <show-at :breakpoints="{small: 960, medium: 1280, large: 1920}" breakpoint="small">
           <div class="mobile-images-area">
-            <div class="mobile-image-area" v-for="(i, index) in imgs" :key="index">
-              <div class="mobile-item-area" :style="'background-image: url('+i.src+')'">
-                <!-- <img v-bind:src="i.src" class="mobile-item-image"> -->
-              </div>
-              <router-link v-bind:to="i.url" class="mobile-item-link">
-                <h2 class="mobile-item-text">{{i.title}}</h2>  
+            <div class="mobile-images-area-each" v-for="(i, index) in imgs" :key="index">
+              <div class="mobile-images-area-each-image" :style="'background-image: url('+i.src+')'"></div>
+              <router-link class="mobile-images-area-each-link" v-bind:to="i.url">
+                <h2 class="mobile-images-area-each-link-text">{{i.title}}</h2>  
               </router-link>
             </div>
           </div>
@@ -173,20 +171,22 @@ export default {
     margin: 0 -10px;
   }
   .mobile-images-area{
-    .mobile-image-area{
-      width: 100%; height: 30vh;
+    &-each{
+      width: 100%;
       position: relative;
-      .mobile-item-area{
-        position: relative;
+      padding-top: 53%;
+      &-image{
+        position: absolute;
+        top: 0; left: 0;
         width: 100%; height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
-      .mobile-item-link{
+      &-link{
         position: absolute;
         bottom: 0; width: 100%;
-        .mobile-item-text{
+        &-text{
           background-color: rgba(0,0,0,0.7);
           color: white;
           margin: 0;

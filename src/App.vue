@@ -60,6 +60,9 @@ $responsive-breakpoint: 1128px;
 }
 a {
   text-decoration: none;
+  &:not(.important){
+    color: rgba(0,0,0,0.87) !important;
+  }
   &:not(.md-button):hover {
     text-decoration: none !important;
 

@@ -3,92 +3,91 @@
     <h1 class="page-title">{{ $t('contactUs.title') }}</h1> 
     <div class="center-contents">
       <div id="contact-us" class="body md-layout" >
-        <form class="md-layout-item md-size-50 md-small-size-100" novalidate  @submit.prevent="sendEmail">
-          <md-card>
+        <md-card class="md-layout-item md-size-50 md-small-size-100">
             <md-card-header>
               <div class="md-title">{{ $t('contactUs.emailContact') }}</div>
             </md-card-header>
 
             <md-card-content>
-              <div class="md-layout md-gutter">
-                <div class="md-layout-item md-small-size-100">
-                  <md-field :class="getValidationClass('personName')">
-                    <label for="person-name">{{ $t('contactUs.personName') }}</label>
-                    <md-input name="person-name" id="person-name" 
-                      autocomplete="given-name" v-model="form.personName"
-                      :disabled="sending" required
-                    />
-                    <span class="md-error" v-if="!$v.form.personName.required">{{ $t('contactUs.noti.required.personName') }}</span>
-                    <span class="md-error" v-else-if="!$v.form.personName.minlength">{{ $t('contactUs.noti.invalid.personName') }}</span>
-                  </md-field>
+              <form  novalidate  @submit.prevent="sendEmail">
+                <div class="md-layout md-gutter">
+                  <div class="md-layout-item md-small-size-100">
+                    <md-field :class="getValidationClass('personName')">
+                      <label for="person-name">{{ $t('contactUs.personName') }}</label>
+                      <md-input name="person-name" id="person-name" 
+                        autocomplete="given-name" v-model="form.personName"
+                        :disabled="sending" required
+                      />
+                      <span class="md-error" v-if="!$v.form.personName.required">{{ $t('contactUs.noti.required.personName') }}</span>
+                      <span class="md-error" v-else-if="!$v.form.personName.minlength">{{ $t('contactUs.noti.invalid.personName') }}</span>
+                    </md-field>
+                  </div>
+
+                  <div class="md-layout-item md-small-size-100">
+                    <md-field :class="getValidationClass('companyName')">
+                      <label for="company-name">{{ $t('contactUs.companyName') }}</label>
+                      <md-input name="company-name" id="company-name" 
+                        autocomplete="family-name" v-model="form.companyName" 
+                        :disabled="sending" required
+                      />
+                      <span class="md-error" v-if="!$v.form.companyName.required">{{ $t('contactUs.noti.required.companyName') }}</span>
+                      <span class="md-error" v-else-if="!$v.form.companyName.minlength">{{ $t('contactUs.noti.invalid.companyName') }}</span>
+                    </md-field>
+                  </div>
                 </div>
 
-                <div class="md-layout-item md-small-size-100">
-                  <md-field :class="getValidationClass('companyName')">
-                    <label for="company-name">{{ $t('contactUs.companyName') }}</label>
-                    <md-input name="company-name" id="company-name" 
-                      autocomplete="family-name" v-model="form.companyName" 
-                      :disabled="sending" required
-                    />
-                    <span class="md-error" v-if="!$v.form.companyName.required">{{ $t('contactUs.noti.required.companyName') }}</span>
-                    <span class="md-error" v-else-if="!$v.form.companyName.minlength">{{ $t('contactUs.noti.invalid.companyName') }}</span>
-                  </md-field>
-                </div>
-              </div>
+                <md-field :class="getValidationClass('email')">
+                  <label for="email">{{ $t('contactUs.email') }}</label>
+                  <md-input type="email" name="email" id="email" 
+                    autocomplete="email" v-model="form.email" 
+                    :disabled="sending" required
+                  />
+                  <span class="md-error" v-if="!$v.form.email.required">{{ $t('contactUs.noti.required.email') }}</span>
+                  <span class="md-error" v-else-if="!$v.form.email.email">{{ $t('contactUs.noti.invalid.email') }}</span>
+                </md-field>
 
-              <md-field :class="getValidationClass('email')">
-                <label for="email">{{ $t('contactUs.email') }}</label>
-                <md-input type="email" name="email" id="email" 
-                  autocomplete="email" v-model="form.email" 
-                  :disabled="sending" required
-                />
-                <span class="md-error" v-if="!$v.form.email.required">{{ $t('contactUs.noti.required.email') }}</span>
-                <span class="md-error" v-else-if="!$v.form.email.email">{{ $t('contactUs.noti.invalid.email') }}</span>
-              </md-field>
-
-              <md-field :class="getValidationClass('contactNumber')">
-                <label for="contact-number">{{ $t('contactUs.contactNumber') }}</label>
-                <md-input name="contact-number" id="contact-number" 
-                  autocomplete="contact-number" v-model="form.contactNumber"
-                  :disabled="sending"
-                />
-              </md-field>
+                <md-field :class="getValidationClass('contactNumber')">
+                  <label for="contact-number">{{ $t('contactUs.contactNumber') }}</label>
+                  <md-input name="contact-number" id="contact-number" 
+                    autocomplete="contact-number" v-model="form.contactNumber"
+                    :disabled="sending"
+                  />
+                </md-field>
+                
+                <md-field :class="getValidationClass('topic')">
+                  <label for="movies">{{ $t('contactUs.areasOfService.title') }}</label>
+                  <md-select v-model="form.areasOfSupport" name="areasOfSupport" id="areasOfSupport" multiple>
+                    <md-option value="견적문의">{{ $t('contactUs.areasOfService.inquiry') }}</md-option>
+                    <md-option value="파트너쉽">{{ $t('contactUs.areasOfService.partnership') }}</md-option>
+                    <md-option value="하네스">{{ $t('contactUs.areasOfService.harness') }}</md-option>
+                    <md-option value="diakont">Diakont</md-option>
+                    <md-option value="eTec">E-Tec</md-option>
+                    <md-option value="glentek">Glentek</md-option>
+                    <md-option value="vairex">Vairex</md-option>
+                    <md-option value="기타">{{ $t('contactUs.areasOfService.etc') }}</md-option>
+                  </md-select>
+                </md-field>
+                
+                <md-field :class="getValidationClass('message')">
+                  <label>{{ $t('contactUs.body.title') }}</label>
+                  <md-textarea v-model="form.message" required></md-textarea>
+                  <span class="md-error" v-if="!$v.form.message.required">{{ $t('contactUs.noti.required.message') }}</span>
+                </md-field>
+                <md-progress-bar md-mode="indeterminate" v-if="sending" />
               
-              <md-field :class="getValidationClass('topic')">
-                <label for="movies">{{ $t('contactUs.areasOfService.title') }}</label>
-                <md-select v-model="form.areasOfSupport" name="areasOfSupport" id="areasOfSupport" multiple>
-                  <md-option value="견적문의">{{ $t('contactUs.areasOfService.inquiry') }}</md-option>
-                  <md-option value="파트너쉽">{{ $t('contactUs.areasOfService.partnership') }}</md-option>
-                  <md-option value="하네스">{{ $t('contactUs.areasOfService.harness') }}</md-option>
-                  <md-option value="diakont">Diakont</md-option>
-                  <md-option value="eTec">E-Tec</md-option>
-                  <md-option value="glentek">Glentek</md-option>
-                  <md-option value="vairex">Vairex</md-option>
-                  <md-option value="기타">{{ $t('contactUs.areasOfService.etc') }}</md-option>
-                </md-select>
-              </md-field>
-              
-              <md-field :class="getValidationClass('message')">
-                <label>{{ $t('contactUs.body.title') }}</label>
-                <md-textarea v-model="form.message" required></md-textarea>
-                <span class="md-error" v-if="!$v.form.message.required">{{ $t('contactUs.noti.required.message') }}</span>
-              </md-field>
+                <md-card-actions>
+                  <vue-recaptcha sitekey="6Le87E4UAAAAADtJ0Kiku6cxj0awVxZQRJK6pd51">
+                    <md-button type="submit" class="md-primary contactUs-form-submit-btn" :disabled="sending">{{ $t('contactUs.submit') }}</md-button>
+                  </vue-recaptcha>
+                </md-card-actions>
 
+              </form>
             </md-card-content>
-
-            <md-progress-bar md-mode="indeterminate" v-if="sending" />
-            
-            <md-card-actions>
-              <vue-recaptcha sitekey="6Le87E4UAAAAADtJ0Kiku6cxj0awVxZQRJK6pd51">
-                <md-button type="submit" class="md-primary" :disabled="sending">{{ $t('contactUs.submit') }}</md-button>
-              </vue-recaptcha>
-            </md-card-actions>
           </md-card>
 
           <md-snackbar :md-position="'left'" :md-duration="3000" md-persistent :md-active.sync="emailSent" >
             <span>{{ $t('contactUs.noti.success') }}</span>
           </md-snackbar>
-        </form>
 
         <md-card class="md-layout-item md-size-50 md-small-size-100">
           <md-card-header>
@@ -187,11 +186,8 @@ export default {
       let info = this.$data.form
       let emailHTMLbody = `<br><h3>[성명]: ${info.personName} [회사명]: ${info.companyName}</h3><br><h3>[이메일]: ${info.email} [전화번호]: ${info.contactNumber}</h3><br><h3>[문의주제]: ${JSON.stringify(info.areasOfSupport)} </h3><br><h5>[문의내용]</h5><br><p>${info.message}</p><br>`
       // console.log(emailHTMLbody);
-      
       if (!vm.$v.$invalid) {
-
         // var myHeaders = new Headers();
-
         // myHeaders.append('Content-Type', 'application/json');
         // myHeaders.append('Accept', 'application/json');
 
@@ -212,7 +208,6 @@ export default {
           console.log(response);
           vm.$data.emailSent = true;
           //redirect to home
-          // vm.$router.push('/');
         })
         .catch( e => {
           //send notification
@@ -253,6 +248,14 @@ form {
   -ms-overflow-style: none;
   .md-card {
     height: 100%;
+  }
+}
+.contactUs-form-submit-btn {
+  background-color: rgba(0,0,0,0.1) !important;
+}
+#contact-us {
+  .md-card {
+    margin-bottom: 10px;
   }
 }
 </style>
