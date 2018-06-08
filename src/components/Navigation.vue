@@ -33,10 +33,10 @@
                                         <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/about-us"><div>{{ $t("aboutUs.title") }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/organization"><div>{{ 'Organization' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/organization"><div>{{ $t('aboutUs.bDiv.title') }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/area-of-business"><div>{{ 'Areas of Business' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/corp/area-of-business"><div>{{ $t('aboutUs.bArea.title') }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
                             </md-list-item>
@@ -44,16 +44,16 @@
                                 <span class="md-list-item-text">{{ $t("hNe.title") }}</span>
                                 <md-list slot="md-expand">
                                     <md-list-item class="md-inset">
-                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/harness"><div>{{ $t("hNe.title") }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/medical"><div>{{ $t('hNe.harness.medical.title') }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/engineering"><div>{{ 'Engineering' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/industrial"><div>{{ $t('hNe.harness.industrial.title') }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/military"><div>{{ 'Military' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/engineering"><div>{{ $t('hNe.engineering.title') }}</div></router-link>
                                     </md-list-item>
                                     <md-list-item class="md-inset">
-                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/medical"><div>{{ 'Medical' }}</div></router-link>
+                                        <router-link @click="drawerToggle()" class="nav-mobile-link" to="/hne/certs"><div>{{ $t('hNe.engineering.qmsc.title') }}</div></router-link>
                                     </md-list-item>
                                 </md-list>
                             </md-list-item>

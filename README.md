@@ -1,42 +1,8 @@
-# chois
+;and == && for fish
 
-> A Vue.js project built with vue/webpack template.
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+dev
+rm -rf node_modules ;and npm install ;and npm run dev
 
 
-# Enable pre-installed Nginx1.12 on Amazon linux 2
-
-1. Install deltarpm first
-sudo yum install deltarpm
-
-2. Enable nginx1.12
-sudo amazon-linux-extras install nginx1.12
-
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-
+deploy
+rm -rf node_modules ;and npm install ;and npm run build ;and git add -A ;and git commit -m "some bugs fixed" ;and git push origin master ;and docker-compose -f docker-compose.nginx.yml build ;and docker-compose -f docker-compose.nginx.yml push
