@@ -14,7 +14,9 @@ const ko = {
             p1: "최근에는 시험 및 계측, 의료전자, 자동차 전자 분야 및 와이 파이 무선통신 분야, 로보트 용 및 반도체 장비용 케이블 및 그 하니스 등, 많은 프로젝트에 성공적으로 참여하고 있습니다.",
             p2: "고객이 필요로 하는 사항을 경청하여, 고객이 꼭 원하는 Cable harness를 제작하여 드리거나, 이에 필요한 부품 등을 공급하는, 기술영업을 전문으로 하는 부품 무역 및 케이블 하니스 제조업체입니다."
         },
-        bDiv: "사업부서",
+        bDiv: {
+            title:"사업부서"
+        },
         bArea: {
             title: "사업분야",
             b0: "방위산업 (무기개발프로그램) 및 우주 (위성) 분야",
@@ -151,19 +153,27 @@ const ko = {
             },
             vs14: {
                 desc1: 'VAIREX VRB1과 VRB2에 사이즈가 맞게 제작됬습니다.',
+                desc2: '',
+                material: 'ABS',
+                tubeSize: '0.55in (인치)'
             },
             vs25: {
                 desc1: 'VAIREX VRB4과 1인치(25mm) 포트 튜브를 쓰는 VRB8 시리즈 압축기에 사이즈가 맞게 제작됬습니다.',
                 desc2: '왼쪽에 첨부된 사진은 Solberg에서 제작된 필터/소음기를 장착한 VAIREX의 소음기입니다.',
+                material: 'ABS',
+                tubeSize: '1.0in (인치)'
             },
             vs30: {
                 desc1: '30mm 포트 튜브를 쓰는 VAIREX VRB8 시리즈에 맞게 제작됬습니다.',
                 desc2: '왼쪽에 첨부된 사진은 Solberg에서 제작된 필터/소음기를 장착한 VAIREX의 소음기입니다.',
-                material: 'ABS, 알루미늄'
+                material: 'ABS, 알루미늄',
+                tubeSize: '33mm'
             },
             vs33: {
                 desc1: 'VAIREX VRB32 재생식 블로어에 맞게 제작됬습니다.',
-                material: 'ABS, 알루미늄'
+                desc2: '',
+                material: 'ABS, 알루미늄',
+                tubeSize: '1.3in (인치)'
             }
         },
         controller: {
@@ -204,7 +214,7 @@ const ko = {
             }
         },
         engineering: {
-            title: "개발 기술력",
+            title: "기술개발력",
             products: {
                 title: "개발된 제품",
                 heavyIon: "중이온가속기용 고전류 커넥터",
@@ -212,7 +222,8 @@ const ko = {
                 waterproof: "방수 및 수중 커넥터"
             },
             qmsc: {
-                title: "품질경영시스템인증서",
+                title: "품질경영 및 특허",
+                certs: "품질경영시스템인증서",
                 en_version: "영문",
                 ko_version: "국문"
             }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="page-title">{{ $t('aboutUs.bDiv') }}</h1> 
+        <h1 class="page-title">{{ $t('aboutUs.bDiv.title') }}</h1> 
         <div class="center-contents">
             <div id="about-us" class="body">
                 <img src="@/assets/b-div.jpg" alt="business divisions" title="business divisions" border="0">

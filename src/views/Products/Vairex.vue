@@ -54,8 +54,8 @@
                   <h3 class="product-name md-layout-item md-large-size-100 md-medium-size-100 md-small-size-100 md-xsmall-size-100">{{product.name}}</h3>
                   <img class="product-image md-layout-item md-large-size-50 md-medium-size-50 md-small-size-50 md-xsmall-size-100" :src="product.imgSrc" :alt="product.name + 'image'">
                   <div class="product-text md-layout-item md-large-size-50 md-medium-size-50 md-small-size-50 md-xsmall-size-100">
-                    <p class="product-paragraph first">{{product.desc1}}</p>
-                    <p class="product-paragraph second" v-if="product.desc2 !== ''">{{product.desc2}}</p>
+                    <p class="product-paragraph first">{{$t(product.desc1)}}</p>
+                    <p class="product-paragraph second" v-if="product.desc2 !== ''">{{$t(product.desc2)}}</p>
                   </div>
                 </div>
               </div>
@@ -63,13 +63,13 @@
                 <table>
                   <tbody>
                     <tr>
-                      <td>{{$t('vairex.silencer.data.size')}}</td><td>{{product.tubeSize}}</td>
+                      <td>{{$t('vairex.silencer.data.size')}}</td><td>{{$t(product.tubeSize)}}</td>
                     </tr>
                     <tr>
-                      <td>{{$t('vairex.silencer.data.material')}}</td><td>{{product.material}}</td>
+                      <td>{{$t('vairex.silencer.data.material')}}</td><td>{{$t(product.material)}}</td>
                     </tr>
                     <tr>
-                      <td>{{$t('vairex.silencer.data.temp')}}</td><td>{{product.temp}}</td>
+                      <td>{{$t('vairex.silencer.data.temp')}}</td><td>{{$t(product.temp)}}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -166,33 +166,33 @@
         silencers: [
           { 
             name: 'VS14',
-            desc1: this.$t('vairex.silencer.vs14.desc1'),
+            desc1: 'vairex.silencer.vs14.desc1',
             desc2: '',
-            tubeSize: "0.55in", material: 'ABS', temp: "88°C",
+            tubeSize: "vairex.silencer.vs14.tubeSize", material: 'vairex.silencer.vs14.material', temp: "88°C",
             link: 'https://vairex.com/silencers/',
             imgSrc: 'https://vairex.com/wp-content/uploads/2017/01/VS14-01-Render.jpg'
           },
           { 
             name: 'VS25',
-            desc1: this.$t('vairex.silencer.vs25.desc1'),
-            desc2: this.$t('vairex.silencer.vs25.desc2'),
-            tubeSize: "1.0in", material: 'ABS', temp: "88°C",
+            desc1: 'vairex.silencer.vs25.desc1',
+            desc2: 'vairex.silencer.vs25.desc2',
+            tubeSize: "vairex.silencer.vs25.tubeSize", material: 'vairex.silencer.vs25.material', temp: "88°C",
             link: 'https://vairex.com/silencers/',
             imgSrc: 'https://vairex.com/wp-content/uploads/Official_Product_Information/Renders/VS25-01-Render-Tight-Crop.jpg'
           },
           { 
             name: 'VS30',
-            desc1: this.$t('vairex.silencer.vs30.desc1'),
-            desc2: this.$t('vairex.silencer.vs30.desc2'),
-            tubeSize: "33mm", material: this.$t('vairex.silencer.vs30.material'), temp: "88°C",
+            desc1: 'vairex.silencer.vs30.desc1',
+            desc2: 'vairex.silencer.vs30.desc2',
+            tubeSize: "vairex.silencer.vs30.tubeSize", material: 'vairex.silencer.vs30.material', temp: "88°C",
             link: 'https://vairex.com/silencers/',
             imgSrc: 'https://vairex.com/wp-content/uploads/Official_Product_Information/Renders/VS25-01-Render-Tight-Crop.jpg'
           },
           { 
             name: 'VS33',
-            desc1: this.$t('vairex.silencer.vs33.desc1'),
+            desc1: 'vairex.silencer.vs33.desc1',
             desc2: '',
-            tubeSize: "1.3in", material: this.$t('vairex.silencer.vs33.material'), temp: "88°C",
+            tubeSize: "vairex.silencer.vs33.tubeSize", material: 'vairex.silencer.vs33.material', temp: "88°C",
             link: 'https://vairex.com/silencers/',
             imgSrc: 'https://vairex.com/wp-content/uploads/2017/01/VS33.jpg'
           }

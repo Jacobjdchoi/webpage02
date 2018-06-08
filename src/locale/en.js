@@ -14,7 +14,9 @@ const en = {
             p1: "We participate in a number of projects in various business areas such as Precision Testing and Measurement, Medical Electronics, Motor Vehicle Electronics, Wireless Communication Devices, Advanced Robotics, Semi-conductor cables, and Cable Harnessing.",
             p2: "Chois Technics Inc. is a cable harness and tech consulting company that provides the best solution for every customer’s needs through discovering various components from around the world, assisting in customization, and providing the necessary cable harness with smooth customer service."
         },
-        bDiv: "Business Division Table",
+        bDiv: {
+            title:"Business Division Table"
+        },
         bArea: {
             title: "Business Areas",
             b0: "Defense (Weapons development) and Aerospace (Satlite) Industry",
@@ -150,19 +152,27 @@ const en = {
             },
             vs14: {
                 desc1: 'Sized to match the VAIREX VRB1 and VRB2 regenerative blowers.',
+                desc2: '',
+                material: 'ABS',
+                tubeSize: '0.55in'
             },
             vs25: {
                 desc1: 'Sized to fit our VRB4 and VRB8 series of regenerative blowers with 1 inch (25mm) port tubes.',
                 desc2: 'Shown to the left is the VAIREX silencer with an integrated Solberg Manufacturing Filter/Silencer.',
+                material: 'ABS',
+                tubeSize: '1.0in'
             },
             vs30: {
                 desc1: 'Sized to fit our VRB8 series of regenerative blowers with 30mm port tubes.',
                 desc2: 'The VAIREX silencer with an integrated Solberg Manufacturing Filter/Silencer is shown to the left.',
-                material: 'ABS, Aluminium'
+                material: 'ABS, Aluminium',
+                tubeSize: '33mm'
             },
             vs33: {
                 desc1: 'Sized to match the VAIREX VRB32 regenerative blowers.',
-                material: 'ABS, Aluminium'
+                desc2: '',
+                material: 'ABS, Aluminium',
+                tubeSize: '1.3in'
             }
         },
         controller: {
@@ -211,7 +221,8 @@ const en = {
                 waterproof: "Waterproof connector, underwater connector"
             },
             qmsc: {
-                title: "Quality Managment System Certification",
+                title: "Quality Management & Patents",
+                certs: "Quality Managment System Certification",
                 en_version: "English",
                 ko_version: "Korean"
             }

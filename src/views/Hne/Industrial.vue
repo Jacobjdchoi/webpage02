@@ -1,9 +1,8 @@
 <template>
     <div>
-        <h1 class="page-title">{{ title }}</h1>
+        <h1 class="page-title">{{ $t('hNe.harness.industrial.title') }}</h1>
         <div class="center-contents">
             <div id="industrial" class="body">
-                <h2>{{ $t('hNe.harness.industrial.title') }}</h2>
                 <img class="harness-image" src="@/assets/m2.jpg" alt="Industrial Cables">
                 <h3>{{ $t('hNe.harness.industrial.h2') }}</h3>
                 <p>
@@ -18,7 +17,6 @@ export default {
     name: 'IndustrialApplication',
     data(){
         return {
-            title: 'Industrial Application'
         }
     }
 }

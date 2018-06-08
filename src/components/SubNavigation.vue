@@ -3,7 +3,7 @@
         <div class="sub-navigation" v-bind:class="{ isHidden: isHidden, isVisible: isVisible }" >
             <ul class="sub-nav-list">
                 <router-link class="sub-nav-link" v-for="item in items" :to="item.path" :key="item.name">
-                    <li class="sub-nav-item">{{ item.name }}</li>
+                    <li class="sub-nav-item">{{ $t(item.localeVal) }}</li>
                 </router-link>
             </ul>
         </div>

@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h1 class="page-title">{{ 'Engineering' }}</h1>
+    <h1 class="page-title">{{ $t('hNe.engineering.title')  }}</h1>
     <div class="center-contents">
       <div id="engineering" class="body">
-            <h1>{{ $t('hNe.engineering.title') }}</h1>
-            <h2>{{ $t('hNe.engineering.products.title') }}</h2>
+            <h1>{{ $t('hNe.engineering.products.title') }}</h1>
             <div class="engineered-products-wrapper md-layout md-gutter">
             <div class="engineered-products md-layout-item md-medium-size-33 md-small-size-100 md-xsmall-size-100">
                 <div class="engineered-product-pic">

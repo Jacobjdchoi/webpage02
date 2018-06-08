@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="page-title">{{ 'Certificates & Patents' }}</h1>
+    <h1 class="page-title">{{ $t('hNe.engineering.qmsc.title') }}</h1>
     <div class="center-contents">
       <div id="certs" class="body">
-          <h2>{{ $t('hNe.engineering.qmsc.title') }}</h2>
+          <h2>{{ $t('hNe.engineering.qmsc.certs') }}</h2>
           <div class="qmsc-certs-area md-layout md-gutter">
             <div class="qmsc-certs-link-area md-layout-item md-medium-size-50 md-small-size-100 md-xsmall-size100">
               <a class="qmsc-certs-link" href="/static/QMSC_KO.pdf" target="_blank">
