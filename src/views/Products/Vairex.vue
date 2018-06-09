@@ -229,61 +229,6 @@
   }
 }
 
-.product-finder-button {
-  width: 100%;
-  height: 75px;
-  @extend %vairex-button;
-}
-
-.accessories-product-list{
-  .accessories-product-item{
-    text-align: center;
-    padding: 0 0 0 10px;
-    position: relative;
-    .accessories-product-link{
-      .category-image{
-        height: 200px;
-        background-position: center center!important;
-        background-size: cover!important;
-        position: relative;
-        width: 100%;
-        height: 280px;
-        &#category-inductors{
-          background: url('https://www.vairex.com/wp-content/uploads/2017/12/inductors.jpg');
-        }
-        &#category-transformers{
-          background: url('https://www.vairex.com/wp-content/uploads/2017/12/transformers.jpg');
-        }
-        &#category-cables{
-          background: url('https://www.vairex.com/wp-content/uploads/2017/11/cables.jpg');
-        }
-      }
-      .category-name{
-        color: #fff;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        width: calc(100% - 10px);
-        z-index: 500;
-        h3 {  
-          text-transform: uppercase;
-          text-align: center;
-          font-size: 20px;
-          font-weight: 700;
-          padding: 20px 10px;
-          background-color: rgba(0,0,0,.5);
-          width: 60%;
-          margin: 0 auto;
-          line-height: 1.5;
-          &:hover {
-            background-color: rgba(0,0,0,.85);
-          }
-        }
-      }
-    }
-  }
-}
 .vairex-product-area{
   width: 100%;
   margin: 0 !important;

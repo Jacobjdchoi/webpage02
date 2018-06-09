@@ -1,0 +1,9 @@
+version: '3'
+services:
+  webapp:
+    image: 'jacobjdchoi/chois_passenger'
+    build: 
+      context: .
+      dockerfile: docker/passenger/Dockerfile-psg
+    ports:
+      - "80:80"

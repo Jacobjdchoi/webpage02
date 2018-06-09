@@ -1,0 +1,33 @@
+
+# See https://github.com/phusion/passenger-docker/
+# To look around
+# docker run --rm -t -i phusion/passenger-full bash -l
+# docker run --rm -t -i phusion/passenger-nodejs bash -l
+
+FROM phusion/passenger-nodejs
+
+ENV HOME=/root \
+    NODE_ROOT=/var/www/chois
+
+CMD ["/sbin/my_init"]
+
+RUN rm -f /etc/service/nginx/down
+
+# ...put your own build instructions here...
+
+RUN npm install http-server -g
+
+WORKDIR ${NODE_ROOT}
+
+COPY ./dist ${NODE_ROOT}
+
+RUN rm /etc/nginx/sites-enabled/default
+
+COPY ./docker/passenger/nginx.psg.conf /etc/nginx/sites-enabled/nginx.chois.conf
+
+RUN http-server ${NODE_ROOT} &
+
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+

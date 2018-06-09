@@ -1,11 +1,10 @@
 version: '3'
-
 services:
   web:
     image: 'jacobjdchoi/chois'
     build:
       context: .
-      dockerfile: Dockerfile-nginx
+      dockerfile: docker/nginx/Dockerfile-nginx
     ports:
       - '80:80'
     volumes:
